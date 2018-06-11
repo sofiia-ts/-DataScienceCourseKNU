@@ -21,42 +21,53 @@
 data<-read.csv(file="d:/R/hw1_data.csv")
 
 #1. Які назви стовпців файлу даних?
-names(data)
+  
+  names(data)
 
 #2. Виведіть перші 6 строк фрейму даних.
-head(data)
+ 
+   head(data)
 
 #3. Скільки спостерігань (строк) в дата фреймі?
-nrow(data)
+  
+  nrow(data)
 
 #4. Виведіть останні 10 строк дата фрейму.
-tail(data,10)
+  
+  tail(data,10)
 
 #5. Як багато значень «NA» в стовпці «Ozone»?
-length(data$Ozone[is.na(data$Ozone)])
+  
+  length(data$Ozone[is.na(data$Ozone)])
 
 #6. Яке середнє (mean) стовпця «Ozone». Виключити «NA» значення.
-mean(data$Ozone,na.rm = T)
+ 
+   mean(data$Ozone,na.rm = T)
 
 #7. Виведіть частину набору даних (subset) зі значенням «Ozone» > 31 та«Temp» > 90. Яке середнє (mean) значень «Solar.R» в цьому наборі даних(subset)?
-subset(data,Ozone>35&Temp>90)
-mean(subset(data,Ozone>35&Temp>90)$Solar.R,na.rm=T)
+ 
+   subset(data,Ozone>35&Temp>90)
+  mean(subset(data,Ozone>35&Temp>90)$Solar.R,na.rm=T)
 
 #8. Яке середнє значення (mean) для «Temp» для червня («Month» дорівнює6)?
-mean(subset(data,Month==6)$Temp,na.rm=T)
+ 
+   mean(subset(data,Month==6)$Temp,na.rm=T)
 
 #9. Яке максимальне значення «Ozone» для травня («Month» дорівнює 5)?
-max(subset(data,Month==5)$Ozone,na.rm=T)
+  
+  max(subset(data,Month==5)$Ozone,na.rm=T)
 
 > data<-read.csv(file="d:/R/hw1_data.csv")
 > 
 > #1. Які назви стовпців файлу даних?
-> names(data)
+>   
+>   names(data)
 [1] "Ozone"   "Solar.R" "Wind"    "Temp"   
 [5] "Month"   "Day"    
 > 
 > #2. Виведіть перші 6 строк фрейму даних.
-> head(data)
+>  
+>    head(data)
   Ozone Solar.R Wind Temp Month Day
 1    41     190  7.4   67     5   1
 2    36     118  8.0   72     5   2
@@ -66,11 +77,13 @@ max(subset(data,Month==5)$Ozone,na.rm=T)
 6    28      NA 14.9   66     5   6
 > 
 > #3. Скільки спостерігань (строк) в дата фреймі?
-> nrow(data)
+>   
+>   nrow(data)
 [1] 153
 > 
 > #4. Виведіть останні 10 строк дата фрейму.
-> tail(data,10)
+>   
+>   tail(data,10)
     Ozone Solar.R Wind Temp Month Day
 144    13     238 12.6   64     9  21
 145    23      14  9.2   71     9  22
@@ -84,15 +97,18 @@ max(subset(data,Month==5)$Ozone,na.rm=T)
 153    20     223 11.5   68     9  30
 > 
 > #5. Як багато значень «NA» в стовпці «Ozone»?
-> length(data$Ozone[is.na(data$Ozone)])
+>   
+>   length(data$Ozone[is.na(data$Ozone)])
 [1] 37
 > 
 > #6. Яке середнє (mean) стовпця «Ozone». Виключити «NA» значення.
-> mean(data$Ozone,na.rm = T)
+>  
+>    mean(data$Ozone,na.rm = T)
 [1] 42.12931
 > 
 > #7. Виведіть частину набору даних (subset) зі значенням «Ozone» > 31 та«Temp» > 90. Яке середнє (mean) значень «Solar.R» в цьому наборі даних(subset)?
-> subset(data,Ozone>35&Temp>90)
+>  
+>    subset(data,Ozone>35&Temp>90)
     Ozone Solar.R Wind Temp Month Day
 69     97     267  6.3   92     7   8
 70     97     272  5.7   92     7   9
@@ -104,15 +120,15 @@ max(subset(data,Month==5)$Ozone,na.rm=T)
 125    78     197  5.1   92     9   2
 126    73     183  2.8   93     9   3
 127    91     189  4.6   93     9   4
-> mean(subset(data,Ozone>35&Temp>90)$Solar.R,na.rm=T)
+>   mean(subset(data,Ozone>35&Temp>90)$Solar.R,na.rm=T)
 [1] 212.8
 > 
 > #8. Яке середнє значення (mean) для «Temp» для червня («Month» дорівнює6)?
-> mean(subset(data,Month==6)$Temp,na.rm=T)
+>  
+>    mean(subset(data,Month==6)$Temp,na.rm=T)
 [1] 79.1
 > 
 > #9. Яке максимальне значення «Ozone» для травня («Month» дорівнює 5)?
-> max(subset(data,Month==5)$Ozone,na.rm=T)
+>   
+>   max(subset(data,Month==5)$Ozone,na.rm=T)
 [1] 115
-
-
