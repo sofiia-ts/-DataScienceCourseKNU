@@ -16,3 +16,135 @@
 removeNA вказує, чи видаляти NA значення. По замовчуванню він
 дорівнює TRUE.
 
+#add2
+
+  add2<-function(x,y){
+    x+y
+  }
+  add2(3,4)
+
+#above
+  
+  above<-function(x,n=10){
+    x[x>n]
+  }
+  above(c(1,13,2,10,11))
+
+# my_ifelse
+  
+  my_ifelse<-function(x,exp,n){
+    if (exp=="<") {
+      if (length(x[x<n])==0){
+        r<-x
+      } else {
+        r<-x[x<n]
+      }
+    }else if (exp==">"){
+      if (length(x[x>n])==0){
+        r<-x
+      } else {
+        r<-x[x>n]
+      }
+    }else if (exp=="<="){
+      if (length(x[x<=n])==0){
+        r<-x
+      } else {
+        r<-x[x<=n]
+      }
+    }else if (exp==">="){
+      if (length(x[x>=n])==0){
+        r<-x
+      } else {
+        r<-x[x>=n]
+      }
+    }else if (exp=="=="){
+      if (length(x[x==n])==0){
+        r<-x
+      } else {
+        r<-x[x==n]
+      }
+    }
+    return(r)
+  }
+  
+  my_ifelse(c(1,13,2,10,11),"<=",10)
+
+
+#columnmean
+
+  columnmean<-function(x,removeNA=T){
+    apply(x,2,mean,na.rm=removeNA)}
+  
+  data<-data.frame(c1=1:4,c2=c(1, 2, NA, NA))
+  columnmean(data)
+  columnmean(data,F)
+  
+  #add2
+> 
+>   add2<-function(x,y){
++     x+y
++   }
+>   add2(3,4)
+[1] 7
+> 
+> #above
+>   
+>   above<-function(x,n=10){
++     x[x>n]
++   }
+>   above(c(1,13,2,10,11))
+[1] 13 11
+> 
+> # my_ifelse
+>   
+>   my_ifelse<-function(x,exp,n){
++     if (exp=="<") {
++       if (length(x[x<n])==0){
++         r<-x
++       } else {
++         r<-x[x<n]
++       }
++     }else if (exp==">"){
++       if (length(x[x>n])==0){
++         r<-x
++       } else {
++         r<-x[x>n]
++       }
++     }else if (exp=="<="){
++       if (length(x[x<=n])==0){
++         r<-x
++       } else {
++         r<-x[x<=n]
++       }
++     }else if (exp==">="){
++       if (length(x[x>=n])==0){
++         r<-x
++       } else {
++         r<-x[x>=n]
++       }
++     }else if (exp=="=="){
++       if (length(x[x==n])==0){
++         r<-x
++       } else {
++         r<-x[x==n]
++       }
++     }
++     return(r)
++   }
+>   
+>   my_ifelse(c(1,13,2,10,11),"<=",10)
+[1]  1  2 10
+> 
+> 
+> #columnmean
+> 
+>   columnmean<-function(x,removeNA=T){
++     apply(x,2,mean,na.rm=removeNA)}
+>   
+>   data<-data.frame(c1=1:4,c2=c(1, 2, NA, NA))
+>   columnmean(data)
+ c1  c2 
+2.5 1.5 
+>   columnmean(data,F)
+ c1  c2 
+2.5  NA 
