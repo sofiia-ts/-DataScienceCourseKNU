@@ -42,3 +42,23 @@ complete("specdata", 1)
 complete("specdata", c(2, 4, 8, 10, 12))
 complete("specdata", 50:60)
 
+
+corr <- function(directory, threshold = 0) {
+  d<-directory
+  setwd(paste0(" d:/R/ ",d))
+  i<-1
+  cr <- c() 
+  while (i<=332){
+    if (i<=9) file<-read.csv(paste0("00",i,".csv"))
+    else if (i<=99) file<-read.csv(paste0("0",i,".csv"))
+    else file<-read.csv(paste0(i,".csv"))
+    file <- file[complete.cases(file),]
+    if ( nrow(file) > threshold ) {
+      cr <- c(cr, cor(file$sulfate, file$nitrate) ) 
+    }
+  }
+  
+  cr 
+}
+corr("specdata",200)
+
