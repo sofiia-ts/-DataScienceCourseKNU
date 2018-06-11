@@ -30,7 +30,7 @@ removeNA вказує, чи видаляти NA значення. По замо�
   }
   above(c(1,13,2,10,11))
 
-# my_ifelse
+#my_ifelse
   
   my_ifelse<-function(x,exp,n){
     if (exp=="<") {
@@ -95,7 +95,7 @@ removeNA вказує, чи видаляти NA значення. По замо�
 >   above(c(1,13,2,10,11))
 [1] 13 11
 > 
-> # my_ifelse
+> #my_ifelse
 >   
 >   my_ifelse<-function(x,exp,n){
 +     if (exp=="<") {
